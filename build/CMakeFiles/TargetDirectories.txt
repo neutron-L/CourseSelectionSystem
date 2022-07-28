@@ -1,0 +1,3 @@
+/home/rda/Downloads/StudentCourseSelectionSystem/build/CMakeFiles/system.dir
+/home/rda/Downloads/StudentCourseSelectionSystem/build/CMakeFiles/edit_cache.dir
+/home/rda/Downloads/StudentCourseSelectionSystem/build/CMakeFiles/rebuild_cache.dir

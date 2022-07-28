@@ -1,0 +1,2 @@
+cjp 102 15-410,system,45;15-441,database,32;
+cyd 101 cs108,c++,85;cs109,java,120;cs110,python,120;

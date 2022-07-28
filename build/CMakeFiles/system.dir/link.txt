@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Werror -g CMakeFiles/system.dir/src/main.c.o CMakeFiles/system.dir/src/sys.c.o -o ../bin/system 
