@@ -136,8 +136,8 @@ static enum STATUS register_student(char *name, char *passwd)
         student->name = (char *)malloc(strlen(name) + 1);
         student->password = (char *)malloc(strlen(passwd) + 1);
         student->selected_course = NULL;
-        strncpy(student->name, name, strlen(name));
-        strncpy(student->password, passwd, strlen(passwd));
+        strncpy(student->name, name, strlen(name) + 1);
+        strncpy(student->password, passwd, strlen(passwd) + 1);
 
         // set the current student to the new register student, why ? It is convenient to read data at the beginning
         pStudent = student;
@@ -167,8 +167,9 @@ static enum STATUS register_teacher(char *name, char *passwd)
         Teacher *teacher = (Teacher *)malloc(sizeof(Teacher));
         teacher->name = (char *)malloc(strlen(name) + 1);
         teacher->password = (char *)malloc(strlen(passwd) + 1);
-        strncpy(teacher->name, name, strlen(name));
-        strncpy(teacher->password, passwd, strlen(passwd));
+        teacher->published_course = NULL;
+        strncpy(teacher->name, name, strlen(name) + 1);
+        strncpy(teacher->password, passwd, strlen(passwd) + 1);
         // set the current teacher to the new register teacher, why ? It is convenient to read data at the beginning
 
         pTeacher = teacher;

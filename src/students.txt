@@ -1,2 +1,4 @@
-cobe 24 cs108;cs109;
+cobe 24 cs109;
+durant 7 
+irving 11 
 jordan 23 15-410;15-441;cs110;
