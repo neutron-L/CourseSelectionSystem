@@ -18,6 +18,8 @@ static enum STATUS publish_course1(char *code, char *name, int capacity);
 static enum STATUS select_course1(char *code);
 static enum STATUS drop_out_course1(char *code);
 
+static void free_info(Info *);
+
 static void init_teacher()
 {
     long start, end;
@@ -757,7 +759,6 @@ void log_out()
     Course *r = courses;
     // save into file
     FILE *fstu = fopen("/home/rda/Downloads/StudentCourseSelectionSystem/src/students.txt", "w+");
-    // free all structures
     assert(fstu);
 
     while (p)
@@ -794,4 +795,46 @@ void log_out()
         r = courses;
     }
     fclose(ftea);
+
+    // free all structures
+
+    pStudent = students;
+    while (pStudent)
+    {
+        free(pStudent->name);
+        free(pStudent->password);
+        free_info(pStudent->selected_course);
+        pStudent = pStudent->next;
+    }
+
+    pTeacher = teachers;
+    while (pTeacher)
+    {
+        free(pTeacher->name);
+        free(pTeacher->password);
+        free_info(pTeacher->published_course);
+        pTeacher = pTeacher->next;
+    }
+
+    free(administrators->name);
+    free(administrators->password);
+
+    Course *pc = courses;
+    while (pc)
+    {
+        free(pc->name);
+        free(pc->code);
+        free(pc->lecturer);
+        pc = pc->next;
+    }
+}
+
+static void free_info(Info *pi)
+{
+    while (pi)
+    {
+        free(pi->name);
+        free(pi->code);
+        pi = pi->next;
+    }
 }
